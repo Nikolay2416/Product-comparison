@@ -1,0 +1,30 @@
+
+.products_numberOfProducts_buttons {
+  display: flex;
+  align-items: center;
+
+  & p {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 0.02em;
+    color: #0D5ADC;
+    margin-right: 8px;
+  }
+
+  & button {
+    background-color: #fff;
+    padding: 3px;
+  
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    letter-spacing: 0.02em;
+    color: #0D5ADC;
+  }
+}
+
+.active-button {
+  border-bottom: 1px solid #0D5ADC;
+}

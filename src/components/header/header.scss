@@ -1,0 +1,64 @@
+
+.header {
+  border-bottom: 1px solid #A6A5A9;
+  height: 100px;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+
+  &_body {
+    width: 1110px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &_catalog {
+
+      & a {
+        font-style: normal;
+        font-weight: 900;
+        font-size: 18px;
+        line-height: 21px;
+        letter-spacing: 0.05em;
+        color: #0D5ADC;
+      }
+    }
+
+
+    &_personalAccount {
+      display: flex;
+      align-items: center;
+
+      &_comparison {
+        font-style: normal;
+        font-weight: 900;
+        font-size: 12px;
+        line-height: 14px;
+        text-transform: uppercase;
+        color: #3B4157;
+      }
+
+      &_link {
+        display: flex;
+        align-items: center;
+
+        & p {
+          margin-left: 48px;
+          font-style: normal;
+          font-weight: 900;
+          font-size: 12px;
+          line-height: 14px;
+          letter-spacing: 0.02em;
+          color: #3B4157;
+        }
+        
+        &_img {
+          margin-left: 18px;
+          width: 20.02px;
+          height: 20px;
+        }
+      }
+    }
+  }
+}
