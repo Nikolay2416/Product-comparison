@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/Product-comparison/static/css/main.510e0cd7.css",
+    "main.js": "/Product-comparison/static/js/main.059084cd.js",
+    "static/media/Xiaomi-Mi-11-Lite-1.png": "/Product-comparison/static/media/Xiaomi-Mi-11-Lite-1.6f3df3f41c3337a004db.png",
+    "static/media/Samsung-Galaxy-A72.png": "/Product-comparison/static/media/Samsung-Galaxy-A72.f5d2f996f0ad9d036592.png",
+    "static/media/Apple-iPhone-12.png": "/Product-comparison/static/media/Apple-iPhone-12.6b3bb64b58d8a5e0306c.png",
+    "static/media/personalAccountIcon.svg": "/Product-comparison/static/media/personalAccountIcon.8af54d57b08caf346fd88a7596d7e6be.svg",
+    "index.html": "/Product-comparison/index.html",
+    "static/media/the cross.svg": "/Product-comparison/static/media/the cross.0113cea45ba9bac007d1ddc91b89603a.svg",
+    "static/media/check mark.svg": "/Product-comparison/static/media/check mark.39333c42cee51e5572bfd26df80b5709.svg",
+    "main.510e0cd7.css.map": "/Product-comparison/static/css/main.510e0cd7.css.map",
+    "main.059084cd.js.map": "/Product-comparison/static/js/main.059084cd.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.510e0cd7.css",
+    "static/js/main.059084cd.js"
+  ]
+}
