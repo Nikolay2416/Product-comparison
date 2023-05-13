@@ -5,6 +5,26 @@ import SamsungGalaxyA72 from "../assets/Samsung-Galaxy-A72.png";
 import theCross from "../assets/the cross.svg";
 import checkMark from "../assets/check mark.svg";
 
+export interface Product {
+  id: number;
+  title: string;
+  image: string;
+  specifications: Specification;
+}
+
+interface Specification {
+  manufacturer: string;
+  yearOfRelease: string;
+  screenDiagonal: string;
+  countryOfOrigin: string;
+  memoryCapacity: string;
+  screenRefreshRate: string;
+  nfc: string;
+  esimSupport: string;
+  supportWirelessCharging: string;
+  cost: string;
+}
+
 const products = [
   {
     id: 1,

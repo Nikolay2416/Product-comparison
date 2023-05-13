@@ -1,5 +1,11 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { TypeReducer } from './types';
+
+interface TypeReducer {
+  numberOfProductsPerPage: number;
+  theNumberOfProductsButton: number[];
+  searchPhrase: string;
+  meaningСheckbox: boolean;
+}
 
 const initialState: TypeReducer = {
   numberOfProductsPerPage: 3,
