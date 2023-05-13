@@ -2,7 +2,7 @@ import { useRef, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store/index";
 import SearchByName from "../searchByName/SearchByName";
-import { swapObjects} from '../../actions/index';
+import { swapObjects } from '../../reducers/productsReducer';
 
 import pictureReplacementOfTheProduct from "../../assets/picture-replacement-of-the-product.jpg";
 import "./modal.scss";
@@ -14,10 +14,8 @@ interface ModalProps {
 
 const Modal = ({ active, setActive }: ModalProps) => {
 
-  const { nonDisplayedProducts, activeProductID, searchPhrase } = useSelector(
-    (state: RootState) => state.products
-  );
-
+  const { nonDisplayedProducts } = useSelector((state: RootState) => state.products);
+  const { searchPhrase } = useSelector((state: RootState) => state.filterProducts);
   const dispatch = useDispatch();
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -37,8 +35,8 @@ const Modal = ({ active, setActive }: ModalProps) => {
     };
   }, [modalRef, setActive, active]);
 
-  const setSwapObjects = (button: number) => {
-    dispatch(swapObjects(button));
+  const setSwapObjects = (id: number) => {
+    dispatch(swapObjects(id));
   };
 
   const renderProductList = (arr: any[]) => {
@@ -59,7 +57,6 @@ const Modal = ({ active, setActive }: ModalProps) => {
             <p>{title}</p>
           </div>
         )
-      
     })
   }
 

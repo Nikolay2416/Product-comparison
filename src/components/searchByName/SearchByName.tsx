@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store/index";
 import { useState, useEffect } from "react";
-import {addFilteredProducts} from "../../actions/index";
+import {addFilteredProducts} from '../../reducers/filterProductsReducer';
 
 import "./searchByName.scss";
 
@@ -21,10 +21,10 @@ const SearchByName = () => {
   return (
     <div>
       {nonDisplayedProducts.length > 3 ? 
-          <div className="input">
-            <input type="text"  placeholder="Поиск" onChange={(event) => setValue(event.target.value)}/>
-          </div> 
-          : null}
+        <div className="input">
+          <input type="text"  placeholder="Поиск" onChange={(event) => setValue(event.target.value)}/>
+        </div> 
+      : null}
     </div>
   );
 };

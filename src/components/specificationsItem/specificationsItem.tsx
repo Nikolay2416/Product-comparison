@@ -10,9 +10,7 @@ interface ManufacturerProps {
 
 export const SpecificationTextItem = ({ nameOfTheCharacteristic, characteristic }: ManufacturerProps) => {
 
-  const { numberOfProductsPerPage } = useSelector(
-    (state: RootState) => state.products
-  );
+  const {numberOfProductsPerPage} = useSelector((state: RootState) => state.filterProducts);
 
   const renderedItems = characteristic
     .slice(0, numberOfProductsPerPage)
@@ -38,9 +36,7 @@ export const SpecificationTextItem = ({ nameOfTheCharacteristic, characteristic 
 
 export const SpecificationImgItem = ({ nameOfTheCharacteristic, characteristic }: ManufacturerProps) => {
 
-  const { numberOfProductsPerPage } = useSelector(
-    (state: RootState) => state.products
-  );
+  const {numberOfProductsPerPage} = useSelector((state: RootState) => state.filterProducts);
 
   const renderedItems = characteristic
     .slice(0, numberOfProductsPerPage)

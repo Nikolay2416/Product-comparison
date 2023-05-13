@@ -3,8 +3,8 @@ import { RootState } from "../../store/index";
 import { useState, useEffect, useMemo } from "react";
 import {addCompareProduct, 
         addActiveProductID, 
-        addDisplayedAndNonDisplayedProducts, 
-        setMeaningСheckbox} from "../../actions/index";
+        addDisplayedAndNonDisplayedProducts} from '../../reducers/productsReducer';
+import {setMeaningСheckbox} from '../../reducers/filterProductsReducer';
 import FilterProducts from "../filterProducts/FilterProducts";
 import Modal from "../modal/Modal";
 import { ChangeEvent } from 'react';
@@ -12,9 +12,8 @@ import { ChangeEvent } from 'react';
 import "./products.scss";
 
 const Products = () => {
-  const { products, numberOfProductsPerPage, nonDisplayedProducts } = useSelector(
-    (state: RootState) => state.products
-  );
+  const { products, nonDisplayedProducts } = useSelector((state: RootState) => state.products);
+  const {numberOfProductsPerPage} = useSelector((state: RootState) => state.filterProducts);
   const dispatch = useDispatch();
 
   const [modalActive, setModalActive] = useState(
@@ -23,10 +22,6 @@ const Products = () => {
 
   const [idOfTheProductsShown, setIdOfTheProductsShown] = useState<number[]>([]);
   let displayedProductsCount = 0;
-
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    dispatch(setMeaningСheckbox(e.target.checked));
-  }
 
   const addIdOfTheProductsShown = useMemo(() => {
 
@@ -47,6 +42,10 @@ const Products = () => {
     dispatch(addDisplayedAndNonDisplayedProducts()); 
   }, [products, idOfTheProductsShown]);
 
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    dispatch(setMeaningСheckbox(e.target.checked));
+  }
+
   const renderProductList = (arr: any[]) => {
     
     return arr.map(({ id, image, title }, index) => {
@@ -62,15 +61,17 @@ const Products = () => {
                 <img src={image} alt={title} />
               </div>
               <div className="products_main_product_img-but_button">
-                {nonDisplayedProducts.length > 0 ? <button
-                  className="products_main_product_img-but_button_arrow"
-                  onClick={() => {
-                    const newModalActive = [...modalActive];
-                    newModalActive[index] = true;
-                    setModalActive(newModalActive);
-                    dispatch(addActiveProductID(id)); 
-                  }}
-                ></button> : null}
+                {nonDisplayedProducts.length > 0 ? 
+                  <button
+                    className="products_main_product_img-but_button_arrow"
+                    onClick={() => {
+                      const newModalActive = [...modalActive];
+                      newModalActive[index] = true;
+                      setModalActive(newModalActive);
+                      dispatch(addActiveProductID(id)); 
+                    }}
+                  ></button> 
+                : null}
                 <Modal
                   active={modalActive[index]}
                   setActive={() => {

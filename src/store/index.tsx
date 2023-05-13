@@ -1,19 +1,22 @@
-import { createStore, combineReducers, compose } from 'redux';
-import productsReducer from '../reducers/index';
-
-declare global {
-  interface Window {
-    __REDUX_DEVTOOLS_EXTENSION_COMPOSE__?: typeof compose;
-  }
-}
+import { combineReducers } from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
+import productsReducer from '../reducers/productsReducer';
+import filterProductsReducer from '../reducers/filterProductsReducer';
 
 type RootState = {
   products: ReturnType<typeof productsReducer>
+  filterProducts: ReturnType<typeof filterProductsReducer>
 }
 
-const composeEnhancers = process.env.NODE_ENV === 'development' && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : compose;
+const rootReducer = combineReducers({
+  products: productsReducer,
+  filterProducts: filterProductsReducer
+});
 
-const store = createStore(combineReducers({ products: productsReducer }), composeEnhancers());
+const store = configureStore({
+  reducer: rootReducer,
+  devTools: process.env.NODE_ENV === 'development'
+});
 
 export type {RootState};
 export default store;

@@ -15,7 +15,7 @@ const Header = () => {
             <div className="header_body_personalAccount_link">
               <p>Личный кабинет</p>
               <div className="header_body_personalAccount_link_img">
-                <img src={personalAccountIcon} alt="" />
+                <img src={personalAccountIcon} alt="personalAccountIcon"/>
               </div>
             </div>
           </a>

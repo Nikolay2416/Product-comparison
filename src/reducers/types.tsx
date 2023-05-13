@@ -19,13 +19,16 @@ export interface Specification {
 }
 
 export interface ProductsState {
-  numberOfProductsPerPage: number;
-  theNumberOfProductsButton: number[];
   products: Product[];
   compareProducts: any[];
   activeProductID: number;
   nonDisplayedProducts: any[];
   displayedProducts: any[];
+}
+
+export interface TypeReducer {
+  numberOfProductsPerPage: number;
+  theNumberOfProductsButton: number[];
   searchPhrase: string;
   meaningСheckbox: boolean;
 }

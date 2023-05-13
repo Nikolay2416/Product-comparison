@@ -1,12 +1,13 @@
 import { useDispatch, useSelector} from 'react-redux';
-import { setNumberOfProductsPerPage} from '../../actions/index';
+import { setNumberOfProductsPerPage} from '../../reducers/filterProductsReducer';
 import { RootState } from '../../store/index';
 
 import "./filterProducts.scss";
 
 const FilterProducts = () => {
 
-  const {numberOfProductsPerPage, theNumberOfProductsButton, products} = useSelector((state: RootState) => state.products);
+  const {products} = useSelector((state: RootState) => state.products);
+  const {numberOfProductsPerPage, theNumberOfProductsButton} = useSelector((state: RootState) => state.filterProducts);
   const dispatch = useDispatch();
 
   const setProductsCount = (button: number) => {
